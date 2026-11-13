@@ -1,28 +1,14 @@
-# INDEV Security Platform
+# INDEV v1.9.0-final
 
-**Copyright (c) 2026 Nathanlel / yshiecast31-maker** — MIT License
+**Copyright (c) 2026 Nathanlel / yshiecast31-maker** — MIT
 
-Local-first security workspace (public app).
+Final hardening release.
 
-## Dual-app system
-
-| App | Repo | Role |
-|-----|------|------|
-| **INDEV** (this repo) | [indev-app](https://github.com/yshiecast31-maker/indev-app) | Public workspace |
-| **Companion** | [indev-companion](https://github.com/yshiecast31-maker/indev-companion) | Private integrity + pairing |
-| **ahx1** | [ahx1](https://github.com/yshiecast31-maker/ahx1) | Zero-password crypto engine |
-
-Pairing uses shared 256-bit root + `indev-link:v1` tokens (HKDF + HMAC-SHA-256).
-
-## Features
-- Own AI (500k char persistent window)
-- Zero-password ahx1 Crypto Lab
-- Defense Doctrine + open project catalogue
-- Hardened security headers
+## Related repos
+- Companion: https://github.com/yshiecast31-maker/indev-companion
+- ahx1: https://github.com/yshiecast31-maker/ahx1
 
 ## Deploy
-Cloudflare Pages → Upload assets (use full release zip for complete source)
-Build command: `exit 0`
+Cloudflare Pages → Upload assets (full release zip) → `exit 0`
 
-## License
-MIT — see LICENSE
+See SECURITY-FINAL.md.
