@@ -1,4 +1,9 @@
-const CACHE='indev-static-v1.2.0';
+/*
+ * INDEV Security Platform
+ * Copyright (c) 2026 Nathanlel / yshiecast31-maker
+ * Licensed under the MIT License (see LICENSE).
+ */
+const CACHE='indev-static-v1.6.0-full';
 const ASSETS=['./','./index.html','./styles.css','./app.js','./catalogues.js','./url-inspector.js','./assets/indev-intro.mp4','./manifest.webmanifest'];
 const CACHEABLE=new Set(['index.html','styles.css','app.js','catalogues.js','url-inspector.js','manifest.webmanifest']);
 self.addEventListener('install',event=>event.waitUntil((async()=>{const cache=await caches.open(CACHE);await cache.addAll(ASSETS);await self.skipWaiting()})()));
