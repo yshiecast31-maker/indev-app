@@ -1,14 +1,7 @@
-# INDEV v1.9.0-final
+# INDEV v1.11.1
 
-**Copyright (c) 2026 Nathanlel / yshiecast31-maker** — MIT
+Fix: Lumo / studio / private chat `api()` now routes to your **Worker** (Connector URL), not the Pages origin.
 
-Final hardening release.
-
-## Related repos
-- Companion: https://github.com/yshiecast31-maker/indev-companion
-- ahx1: https://github.com/yshiecast31-maker/ahx1
-
-## Deploy
-Cloudflare Pages → Upload assets (full release zip) → `exit 0`
-
-See SECURITY-FINAL.md.
+1. Deploy `worker/` with OPENAI_API_KEY (+ others)
+2. Set Connector URL in the app to the Worker URL
+3. Provider openai or chatgpt → ChatGPT models via OpenAI API

@@ -1,0 +1,4 @@
+name = "indev-backend"
+main = "worker.js"
+compatibility_date = "2024-11-01"
+# secrets: OPENAI_API_KEY XAI_API_KEY DEEPSEEK_API_KEY ALLOWED_ORIGIN
