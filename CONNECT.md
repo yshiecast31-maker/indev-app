@@ -1,27 +1,22 @@
-# For ChatGPT (and humans)
+# CONNECT.md
 
-## GitHub vs live app
-- This repo holds **source notes + Worker**.
-- Full app UI is large; deploy from the **release zip** to Cloudflare Pages (`exit 0`).
-- Do not assume GitHub `main` is byte-identical to every Pages deploy unless we just pushed the same files.
+## Source of truth
+- **GitHub** = source for Worker + notes in this repo
+- **Release ZIP** = full frontend for Cloudflare Pages (`exit 0`)
+- Do not assume Pages equals GitHub main unless the same files were deployed
 
-## ChatGPT connector (OpenAI)
-- Not fixed inside ChatGPT settings from here.
-- INDEV talks to ChatGPT via **Cloudflare Worker** + `OPENAI_API_KEY`.
-- App must set **Connector URL** to the Worker.
-- Bug fixed in v1.11.1: `api()` was calling Pages; it now calls the Worker.
+## ChatGPT / OpenAI
+- `provider: "chatgpt"` is an **alias for the OpenAI API**, not a link to a user's ChatGPT account
+- Needs Worker secret `OPENAI_API_KEY` and app **Connector URL** = Worker URL
 
-## Worker
-- Path: `worker/worker.js`
-- `POST /api/ai/chat` with `{ provider: "openai"|"chatgpt", messages: [...] }`
-- `POST /api/link/check` with `{ url }`
+## Stripe / Notion
+- Stripe = payments
+- Notion = Aldrich-key inventory only
 
-## Money / Notion
-- Stripe = payments (not Shopify for current plan).
-- Notion = Aldrich-key inventory only.
+## Worker endpoints
+- `POST /api/ai/chat`
+- `POST /api/link/check` (public URLs; no automatic multi-hop redirect; body capped)
 
-## What ChatGPT should do
-1. Read this file and `worker/worker.js`.
-2. Help edit code or Dashboard steps.
-3. Not invent a GitHub connector that is not connected in ChatGPT.
-4. For full frontend, ask the user for the latest zip if files are missing here.
+## ChatGPT should not
+- Invent a ChatGPT\u2194GitHub connector that is not connected in ChatGPT settings
+- Present mock backends as live
